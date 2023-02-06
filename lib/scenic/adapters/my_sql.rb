@@ -27,7 +27,7 @@ module Scenic
       end
 
       def create_view(name, sql_definition)
-        execute "CREATE VIEW #{quote_table_name(name)} AS #{sql_definition}"
+        execute "CREATE OR REPLACE VIEW #{quote_table_name(name)} AS #{sql_definition}"
       end
 
       def replace_view(name, sql_definition)
